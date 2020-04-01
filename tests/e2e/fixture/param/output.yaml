@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  I:
+    Type: Number
+  S:
+    Type: String
+  Li:
+    Type: List<Number>
+  Ls:
+    Type: CommaDelimitedList
+  Id:
+    Type: Number
+    Default: 42
+  Sd:
+    Type: String
+    Default: foo
+  Lid:
+    Type: List<Number>
+    Default: 4,2
+  Lsd:
+    Type: CommaDelimitedList
+    Default: f,o,o
+Resources:
+  WchQVIJ3LOW:
+    Type: AWS::CloudFormation::WaitConditionHandle

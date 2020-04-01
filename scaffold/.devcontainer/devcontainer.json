@@ -1,0 +1,10 @@
+{
+    "dockerFile": "Dockerfile",
+    "extensions": [
+        "bungcip.better-toml",
+        "editorconfig.editorconfig",
+        "esbenp.prettier-vscode",
+        "ms-python.python"
+    ],
+    "postCreateCommand": "make install"
+}

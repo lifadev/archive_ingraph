@@ -1,0 +1,7 @@
+.mypy_cache
+.vscode/*
+!.vscode/settings.json
+*.egg-info
+__pycache__
+build
+dist

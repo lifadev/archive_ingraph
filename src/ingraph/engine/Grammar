@@ -1,0 +1,48 @@
+# Grammar for InGraph
+
+file_input: (NEWLINE | import_stmt | classdef)* ENDMARKER
+
+funcdef: 'def' NAME parameters ['->' 'None'] ':' suite
+parameters: '(' [typedargslist] ')'
+typedargslist: (tfpdef ['=' expr] (',' tfpdef ['=' expr])*) [',']
+tfpdef: NAME [':' expr]
+
+stmt: expr_stmt NEWLINE
+expr_stmt: testlist_expr (annassign | testlist | ('=' testlist_expr)*)
+annassign: ':' expr ['=' expr]
+testlist_expr: expr (',' expr)* [',']
+
+# note below: the ('.' | '...') is necessary because '...' is tokenized as ELLIPSIS
+import_stmt: ('from' (('.' | '...')* dotted_name | ('.' | '...')+)
+              'import' import_as_names)
+import_as_name: NAME ['as' NAME]
+import_as_names: import_as_name (',' import_as_name)* [',']
+dotted_name: NAME ('.' NAME)*
+
+suite: stmt | NEWLINE INDENT stmt+ DEDENT
+
+expr: factor ('+' factor)*
+factor: ('-') atom_expr | atom_expr
+atom_expr: atom trailer*
+atom: (
+       '[' [testlist] ']' |
+       '{' [testdict] '}' |
+       NAME | NUMBER | strings | '...' | 'None' | 'True' | 'False')
+trailer: '(' [arglist] ')' | '[' expr ']' | '.' NAME
+testlist: expr (',' expr)* [',']
+testdict: (expr ':' expr) (',' (expr ':' expr))* [',']
+
+classdef: 'class' NAME ['(' dotted_name ')'] ':' classdef_suite
+classdef_suite: classhead | NEWLINE INDENT (classhead | funcdef)+ DEDENT
+classhead: doc | annotation
+doc : strings NEWLINE
+annotation: NAME ':' (NAME | (NAME '[' NAME ']')) NEWLINE
+
+arglist: argument (',' argument)*  [',']
+
+argument: expr | expr '=' expr
+
+strings: (STRING | fstring)+
+fstring: FSTRING_START fstring_content* FSTRING_END
+fstring_content: FSTRING_STRING | fstring_expr
+fstring_expr: '{' testlist '}'

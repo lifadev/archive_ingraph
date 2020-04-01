@@ -1,0 +1,89 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  Ps:
+    Type: String
+  Pli:
+    Type: List<Number>
+  Pls:
+    Type: CommaDelimitedList
+Resources:
+  WchQVIJ3LOW:
+    Type: AWS::CloudFormation::WaitConditionHandle
+  GrpJNMTGX2J:
+    Type: AWS::IAM::Group
+Outputs:
+  Attr:
+    Value: !GetAtt GrpJNMTGX2J.Arn
+  Join0:
+    Value: !Join
+    - ''
+    - - !Join
+        - ''
+        - - !Ref WchQVIJ3LOW
+          - !GetAtt GrpJNMTGX2J.Arn
+      - !Ref WchQVIJ3LOW
+  Join1:
+    Value: !Join
+    - ''
+    - - !Join
+        - ''
+        - - !Ref WchQVIJ3LOW
+          - !GetAtt GrpJNMTGX2J.Arn
+      - foo
+  Join2:
+    Value: !Join
+    - '-'
+    - - !Ref WchQVIJ3LOW
+      - !GetAtt GrpJNMTGX2J.Arn
+  Join3:
+    Value: !Join
+    - '-'
+    - !Split
+      - ':'
+      - !GetAtt GrpJNMTGX2J.Arn
+  Join4:
+    Value: !Join
+    - ''
+    - - !Join
+        - ','
+        - !Ref Pls
+      - !Ref WchQVIJ3LOW
+  Ref:
+    Value: !Ref WchQVIJ3LOW
+  SelectInt:
+    Value: !Select
+    - 0
+    - !Ref Pli
+  SelectStr:
+    Value: !Select
+    - 0
+    - Fn::GetAZs: ''
+  Split:
+    Value: !Select
+    - 0
+    - !Split
+      - ':'
+      - !GetAtt GrpJNMTGX2J.Arn
+  Sub0:
+    Value: !Sub ${WchQVIJ3LOW} ${GrpJNMTGX2J.Arn}
+  Sub1:
+    Value: !Sub
+    - ${A0}
+    - A0: !Join
+      - ''
+      - - !Ref WchQVIJ3LOW
+        - !GetAtt GrpJNMTGX2J.Arn
+  Sub2:
+    Value: !Sub ${WchQVIJ3LOW} ${GrpJNMTGX2J.Arn} ${Ps}
+  Base64:
+    Value:
+      Fn::Base64: foo
+  Cidr:
+    Value: !Select
+    - 0
+    - !Cidr
+      - !Ref Ps
+      - 4
+      - 2
+  Static:
+    Value: bar

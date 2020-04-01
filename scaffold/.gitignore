@@ -1,0 +1,9 @@
+.mypy_cache
+.pytest_cache
+.vscode/*
+!.vscode/settings.json
+*.egg-info
+__pycache__
+build
+dist
+tmp

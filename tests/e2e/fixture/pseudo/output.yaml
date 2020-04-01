@@ -1,0 +1,25 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  WchQVIJ3LOW:
+    Type: AWS::CloudFormation::WaitConditionHandle
+Outputs:
+  AccountId:
+    Value: !Ref 'AWS::AccountId'
+  AvailabilityZone:
+    Value: !Select
+    - 0
+    - Fn::GetAZs: ''
+  NotificationArn:
+    Value: !Select
+    - 0
+    - !Ref 'AWS::NotificationARNs'
+  Partition:
+    Value: !Ref 'AWS::Partition'
+  Region:
+    Value: !Ref 'AWS::Region'
+  StackId:
+    Value: !Ref 'AWS::StackId'
+  StackName:
+    Value: !Ref 'AWS::StackName'
+  UrlSuffix:
+    Value: !Ref 'AWS::URLSuffix'

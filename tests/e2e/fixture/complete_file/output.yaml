@@ -1,0 +1,61 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Parameters:
+  AssetsS3Bucket:
+    Type: String
+  AssetsS3Prefix:
+    Type: String
+Resources:
+  RoleMW2CSPSW:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          Effect: Allow
+          Principal:
+            Service: lambda.amazonaws.com
+          Action: sts:AssumeRole
+      ManagedPolicyArns:
+      - arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
+      Policies:
+      - PolicyDocument:
+          Effect: Allow
+          Action:
+          - acm:DescribeCertificate
+          - acm:CreateCertificate
+          - acm:DeleteCertificate
+          - acm:RequestCertificate
+          Resource: '*'
+        PolicyName: acm
+      - PolicyDocument:
+          Effect: Allow
+          Action:
+          - route53:ChangeResourceRecordSets
+          Resource: '*'
+        PolicyName: r53
+  FuncPlainAX4C4WBG:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        ZipFile: |
+          exports.handle = async () => "Hello, World!";
+      Handler: index.handle
+      Role: !GetAtt RoleMW2CSPSW.Arn
+      Runtime: nodejs12.x
+  FuncZipCYI6F352:
+    Type: AWS::Lambda::Function
+    Properties:
+      Code:
+        S3Bucket: !Ref 'AssetsS3Bucket'
+        S3Key: !Sub ${AssetsS3Prefix}64b9df3b7f85f000aca4b3297957613a5629e6ab
+      Handler: handler.handle
+      Role: !GetAtt RoleMW2CSPSW.Arn
+      Runtime: nodejs12.x
+    DependsOn:
+    - FuncPlainAX4C4WBG
+    - RoleMW2CSPSW
+Outputs:
+  AssetUri:
+    Value: !Sub s3://${AssetsS3Bucket}/${AssetsS3Prefix}64b9df3b7f85f000aca4b3297957613a5629e6ab
+  AssetUrl:
+    Value: !Sub https://${AssetsS3Bucket}.s3.amazonaws.com/${AssetsS3Prefix}64b9df3b7f85f000aca4b3297957613a5629e6ab

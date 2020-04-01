@@ -1,0 +1,36 @@
+{
+    //
+    // Editor
+    //
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/__pycache__": true,
+        "**/*.egg-info": true,
+        ".coverage": true,
+        ".coverage.*": true,
+        ".devcontainer": true,
+        ".editorconfig": true,
+        ".gitattributes": true,
+        ".gitignore": true,
+        ".mypy_cache": true,
+        ".prettierignore": true,
+        ".pytest_cache": true,
+        ".vscode": true,
+        "coverage.xml": true,
+        "dist": true,
+        "Makefile": true,
+        "pyproject.toml": true,
+        "poetry.lock": true,
+        "setup.cfg": true
+    },
+
+    //
+    // Extensions
+    //
+
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": false
+}

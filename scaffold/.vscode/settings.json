@@ -1,0 +1,28 @@
+{
+    //
+    // Editor
+    //
+
+    "files.exclude": {
+        "**/.git": true,
+        "**/__pycache__": true,
+        "**/*.egg-info": true,
+        ".devcontainer": true,
+        ".editorconfig": true,
+        ".gitattributes": true,
+        ".gitignore": true,
+        ".mypy_cache": true,
+        ".prettierignore": true,
+        "poetry.lock": true,
+        "setup.cfg": true
+    },
+
+    //
+    // Extensions
+    //
+
+    "python.formatting.provider": "black",
+    "python.linting.enabled": true,
+    "python.linting.mypyEnabled": true,
+    "python.linting.pylintEnabled": false
+}

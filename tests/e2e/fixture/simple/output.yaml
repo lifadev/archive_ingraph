@@ -1,0 +1,4 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  WchQVIJ3LOW:
+    Type: AWS::CloudFormation::WaitConditionHandle

@@ -1,0 +1,40 @@
+[build-system]
+build-backend="poetry.masonry.api"
+requires=["poetry>=1.0.0"]
+
+[tool.poetry]
+name="ingraph"
+version="0.1.0"
+description="InGraph is an Infrastructure Graph DSL for AWS CloudFormation."
+license="https://github.com/lifadev/ingraph#license"
+authors=["lifa.dev <bonjour@lifa.dev>"]
+homepage="https://lifa.dev/ingraph"
+repository="https://github.com/lifadev/ingraph"
+readme="README.md"
+exclude=["**/*_test.py"]
+packages=[{ include="ingraph", from="src" }]
+
+[tool.poetry.dependencies]
+click="^7.1.1"
+more-itertools="^8.2.0"
+mypy="^0.770"
+networkx="^2.4"
+parso="^0.6.2"
+python="^3.8"
+"ruamel.yaml"="^0.16.10"
+
+[tool.poetry.dev-dependencies]
+autoflake="^1.3.1"
+black="^19.10b0"
+isort="^4.3.21"
+jinja2="^2.11.1"
+pytest="^5.4.1"
+pytest-cov="^2.8.1"
+pytest-mock="^3.0.0"
+pytest-xdist="^1.31.0"
+rope="^0.16.0"
+toml="^0.10.0"
+twine="^3.1.1"
+
+[tool.poetry.scripts]
+ig="ingraph.cli:main"

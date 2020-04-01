@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Resources:
+  FooWchYS7ZC2NU:
+    Type: AWS::CloudFormation::WaitConditionHandle
+  BarBazNetiPCY6OZJU:
+    Type: AWS::EC2::NetworkInterface
+    Properties:
+      SubnetId: subnet_id
+  BarQuxGrp6XB4Y4UC:
+    Type: AWS::IAM::Group
+    Properties:
+      GroupName: qux
