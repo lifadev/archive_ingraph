@@ -13,7 +13,7 @@ packages=[{ include="helloworld", from="src" }]
 
 [tool.poetry.dependencies]
 python="^3.8"
-ingraph ="^0.1.0"
+ingraph ="^0.1.1"
 
 [tool.poetry.dev-dependencies]
 autoflake="^1.3.1"
