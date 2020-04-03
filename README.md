@@ -82,8 +82,8 @@ the source code of your infrastructure are released under the [Apache
 License Version 2][apachev2]. Refer to the header of each file or to the
 LICENSE file present in the parent directory where appropriate.
 
-[badge-version]: https://img.shields.io/badge/version-0.1.0-blue?style=flat-square
-[version]: https://pypi.org/project/ingraph/0.1.0/
+[badge-version]: https://img.shields.io/badge/version-0.1.1-blue?style=flat-square
+[version]: https://pypi.org/project/ingraph/0.1.1/
 [badge-license]: https://img.shields.io/badge/license-AGPL3%2FApache2-blue?style=flat-square
 [license]: https://github.com/lifadev/ingraph#license
 [website]: https://lifa.dev/ingraph
