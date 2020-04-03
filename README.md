@@ -12,7 +12,7 @@ CloudFormation.
 -   **Declarative**: Never again abstract away from CloudFormation.
     Simply declare your infrastructure components, without the hassle of
     YAML, and preserve the strict semantic of the AWS CloudFormation
-    language. Veterans, build on top of your knowledge. Newbies, learn
+    language. Veterans, build on top of your knowledge. Beginners, learn
     CloudFormation effectively.
 
 -   **Composable**: Create encapsulated components with their assets and
