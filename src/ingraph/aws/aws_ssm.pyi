@@ -188,6 +188,7 @@ class Parameter:
         Type: str,
         Value: str,
         AllowedPattern: str = ...,
+        DataType: str = ...,
         DeletionPolicy: str = ...,
         DependsOn: List[Any] = ...,
         Description: str = ...,

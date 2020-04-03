@@ -32,6 +32,7 @@ class Application:
         ApplicationName: str = ...,
         DeletionPolicy: str = ...,
         DependsOn: List[Any] = ...,
+        Tags: List["Tag"] = ...,
         UpdateReplacePolicy: str = ...
     ): ...
     class ApplicationCodeConfiguration:

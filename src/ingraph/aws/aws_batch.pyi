@@ -87,19 +87,19 @@ class JobDefinition:
             self,
             *,
             Image: str,
-            Memory: int,
-            Vcpus: int,
             Command: List[str] = ...,
             Environment: List["JobDefinition.Environment"] = ...,
             InstanceType: str = ...,
             JobRoleArn: str = ...,
             LinuxParameters: "JobDefinition.LinuxParameters" = ...,
+            Memory: int = ...,
             MountPoints: List["JobDefinition.MountPoints"] = ...,
             Privileged: bool = ...,
             ReadonlyRootFilesystem: bool = ...,
             ResourceRequirements: List["JobDefinition.ResourceRequirement"] = ...,
             Ulimits: List["JobDefinition.Ulimit"] = ...,
             User: str = ...,
+            Vcpus: int = ...,
             Volumes: List["JobDefinition.Volumes"] = ...
         ): ...
     class Device:

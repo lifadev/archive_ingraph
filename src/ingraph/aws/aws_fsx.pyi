@@ -34,6 +34,7 @@ class FileSystem:
         LustreConfiguration: "FileSystem.LustreConfiguration" = ...,
         SecurityGroupIds: List[str] = ...,
         StorageCapacity: int = ...,
+        StorageType: str = ...,
         Tags: List["Tag"] = ...,
         UpdateReplacePolicy: str = ...,
         WindowsConfiguration: "FileSystem.WindowsConfiguration" = ...
