@@ -75,6 +75,7 @@ def _runmypy(filename: str) -> None:  # pragma: no cover
             [
                 "--python-version",
                 "3.8",
+                "--namespace-packages",
                 "--disallow-untyped-calls",
                 "--disallow-untyped-defs",
                 "--disallow-incomplete-defs",

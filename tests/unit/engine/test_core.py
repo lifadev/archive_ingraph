@@ -18,7 +18,6 @@ import inspect
 import textwrap
 
 import pytest
-
 from ingraph.engine import importer
 from ingraph.engine.core import (ATTRIBUTES, CIDR, LISTS, PARAMETERS, SELECTS,
                                  AccountID, Asset, Attribute,

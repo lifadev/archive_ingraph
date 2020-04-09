@@ -16,7 +16,6 @@
 from pathlib import Path
 
 import pytest
-
 from ingraph.engine import core
 from ingraph.engine.importer import (aws_hook, external_hook, import_file,
                                      import_module)

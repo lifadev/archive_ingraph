@@ -18,7 +18,6 @@ import textwrap
 import types
 
 import pytest
-
 from ingraph.engine import core, importer, parser
 from ingraph.engine.parser import (CallWrapper, DefinitionWrapper,
                                    FStringWrapper, ImmutabilityGuard,

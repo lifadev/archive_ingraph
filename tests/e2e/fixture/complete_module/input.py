@@ -1,5 +1,6 @@
-from complete_module.sidecar import assets, input
 from ingraph.aws import Asset, aws_iam, aws_lambda
+
+from complete_module.sidecar import assets, input
 
 from . import submodule
 

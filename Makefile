@@ -1,5 +1,5 @@
 VERSION=$(shell python -c 'import toml; print(toml.load("pyproject.toml")["tool"]["poetry"]["version"])')
-SRCDIRS=specs src tests
+SRCDIRS=src tests
 
 test:
 	pytest --exitfirst --forked --capture=no \
@@ -15,9 +15,6 @@ format:
 	npx prettier --end-of-line lf --write '**/*.{css,html,js,json,md,yaml,yml}'
 	sed -i "s/version-[0-9]\+.[0-9]\+.[0-9]\+/version-$(VERSION)/g" README.md
 	sed -i "s/ingraph\/[0-9]\+.[0-9]\+.[0-9]\+/ingraph\/$(VERSION)/g" README.md
-
-spec:
-	python -m specs.aws
 
 clean:
 	rm -rf .coverage* .mypy_cache .pytest_cache coverage.xml dist

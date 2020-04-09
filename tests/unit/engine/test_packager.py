@@ -19,7 +19,6 @@ from io import BytesIO
 from pathlib import Path
 
 import pytest
-
 from ingraph.engine.core import gethash, package_zip
 
 
