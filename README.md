@@ -34,11 +34,14 @@ favorite tool or [`pip`][pip] to install the
 [`ingraph` package][version].
 
 ```
-python3.8 -m pip install --user ingraph
+python3.8 -m pip install --upgrade --user ingraph
 ```
 
 Verify your installation by invoking the `ig` command. You should see
 a welcome screen.
+
+Note that this project relies on [InGraph AWS][ingraph-aws] to provide
+access to the latest native AWS CloudFormation resources, automatically.
 
 ## Example
 
@@ -77,14 +80,14 @@ his guidance and support, this project wouldn't have been possible.
 
 Unless otherwise stated, the source code of the project is released
 under the [GNU Affero General Public License Version 3][agplv3]. Please
-note, however, that all public interfaces subject to be embedded within
-the source code of your infrastructure are released under the [Apache
-License Version 2][apachev2]. Refer to the header of each file or to the
-LICENSE file present in the parent directory where appropriate.
+note, however, that **all public interfaces** subject to be embedded
+within the source code of your infrastructure are part of the [InGraph
+AWS][ingraph-aws] project that is **released under the [Apache License
+Version 2][apachev2]**.
 
 [badge-version]: https://img.shields.io/badge/version-0.2.1-blue?style=flat-square
 [version]: https://pypi.org/project/ingraph/0.2.1/
-[badge-license]: https://img.shields.io/badge/license-AGPL3%2FApache2-blue?style=flat-square
+[badge-license]: https://img.shields.io/badge/license-AGPL3-blue?style=flat-square
 [license]: https://github.com/lifadev/ingraph#license
 [website]: https://lifa.dev/ingraph
 [agplv3]: https://www.gnu.org/licenses/agpl-3.0.txt
@@ -94,3 +97,4 @@ LICENSE file present in the parent directory where appropriate.
 [python]: https://www.python.org/downloads/
 [pip]: https://pip.pypa.io/en/stable/
 [ben]: https://twitter.com/ben11kehoe
+[ingraph-aws]: https://github.com/lifadev/ingraph-aws
