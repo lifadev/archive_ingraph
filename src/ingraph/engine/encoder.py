@@ -18,7 +18,7 @@ import hashlib
 import io
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Any, ClassVar, Mapping, Optional, Sequence, Set, Tuple, cast
+from typing import Any, ClassVar, Mapping, Optional, Set, Tuple, cast
 
 import networkx as nx
 from ruamel.yaml import YAML, Representer, ScalarNode
