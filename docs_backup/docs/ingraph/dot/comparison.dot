@@ -1,0 +1,29 @@
+digraph G {
+    bgcolor=transparent
+    concentrate=true
+    edge [color="#546e7a"]
+    fontcolor="#546e7a"
+    fontname="JetBrains Mono bold"
+    fontsize=12
+    node [
+        color="#546e7a"
+        fontcolor="#546e7a"
+        fontname="JetBrains Mono bold"
+        fontsize=12
+        shape=rectangle
+    ]
+    rankdir=LR
+
+    input [label="desired\ngraph"]
+    interpreter [style=dashed]
+    output [label="actual\ngraph"]
+
+    input -> interpreter
+    input:s -> output:s [
+        color="#546e7a"
+        constraint=false
+        dir=both
+        style=dotted
+    ]
+    interpreter -> output
+}

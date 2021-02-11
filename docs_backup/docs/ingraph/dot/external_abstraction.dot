@@ -1,0 +1,38 @@
+digraph G {
+    bgcolor=transparent
+    concentrate=true
+    edge [color="#546e7a"]
+    fontcolor="#546e7a"
+    fontname="JetBrains Mono bold"
+    fontsize=12
+    node [
+        color="#546e7a"
+        fontcolor="#546e7a"
+        fontname="JetBrains Mono bold"
+        fontsize=12
+        shape=rectangle
+    ]
+    nodesep=0.5
+
+    input_abstraction [label="external\nabstraction"]
+    input [label="desired\ngraph"]
+    interpreter [style=dashed]
+    output [label="actual\ngraph"]
+
+    input_abstraction -> input
+    input_abstraction:e -> output:n [
+        color="#546e7a"
+        constraint=false
+        dir=both
+        style=dotted
+    ]
+    subgraph cluster {
+        color=invis
+        rank=same
+
+        {
+            input -> interpreter
+            interpreter -> output
+        }
+    }
+}

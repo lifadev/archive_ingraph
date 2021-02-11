@@ -1,0 +1,28 @@
+digraph G {
+    bgcolor=transparent
+    edge [color="#546E7A"]
+    fontcolor="#546E7A"
+    fontname="JetBrains Mono bold"
+    fontsize=12
+    node [
+        color="#546E7A"
+        fontcolor="#546E7A"
+        fontname="JetBrains Mono bold"
+        fontsize=12
+        shape=rectangle
+    ]
+    rankdir=LR
+
+    input [label="" shape=none]
+    output [label="" shape=none]
+    executor [shape=octagon]
+
+    input -> plan
+    subgraph cluster {
+        color="#546E7A"
+        label=interpreter
+        style=dashed
+        plan -> executor
+    }
+    executor -> output
+}

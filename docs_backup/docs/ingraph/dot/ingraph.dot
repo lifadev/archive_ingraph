@@ -1,0 +1,25 @@
+digraph G {
+    bgcolor=transparent
+    compound=true
+    edge [color="#546E7A"]
+    node [color="#546e7a" label="" shape=doublecircle style=filled]
+    nodesep=0.5
+    rankdir=LR
+
+    a [fillcolor="#00c379"]
+    b [fillcolor="#00c379"]
+    c [fillcolor="#8e24aa"]
+    d [fillcolor="#8e24aa"]
+    e [fillcolor="#8e24aa"]
+
+    a -> b
+    a -> c [lhead=cluster]
+    b -> c [constraint=false lhead=cluster]
+    subgraph cluster {
+        color="#00c379"
+        style=rounded
+        c -> d
+        c -> e
+        d -> e [constraint=false]
+    }
+}
